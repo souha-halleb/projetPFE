@@ -1,0 +1,18 @@
+table {
+ 
+    width: 100%;
+    border: 2px solid #000; /* Bordure épaisse */
+}
+
+.table th {
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    background-color: rgb(18, 88, 145); /* Couleur de fond pour tous les th */
+    color: black;
+    border: 2px solid #000; /* Bordure épaisse pour les th */
+}
+
+.table td {
+    border: 2px solid #000; /* Bordure épaisse pour les cellules */
+}

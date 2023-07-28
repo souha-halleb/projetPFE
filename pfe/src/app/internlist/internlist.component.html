@@ -1,0 +1,26 @@
+
+   
+        <div>
+      
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Contact</th>
+            <th scope="col"> TopicTitle</th>
+            <th scope="col">SupervisorName</th> 
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of Interns">
+            <td >{{e.name}}></td>
+            <td>{{e.email}}</td>
+            <td>{{e.topicTitle}}</td>
+            <td>{{e.supervisorName}}</td>
+            <td>{{e.phone}}</td>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>

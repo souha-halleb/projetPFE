@@ -1,0 +1,44 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="table table-bordered">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                     Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Contact
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Field
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700" *ngFor="let e of Enterprises">
+                <th scope="row" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                    {{e.name}}
+                </th>
+                <td class="px-6 py-4 flex flex-col">
+                    <div class="email">
+                        {{e.email}}
+                    </div>
+                    <div class="phone">
+                        +216 {{e.phone}}
+                    </div>
+                </td>
+                <td class="px-6 py-4">
+                    {{e.field}}
+                </td>
+                <td class="px-6 py-4" *ngIf="e.isBlocked" >
+                    <button  (click)="enableEnterprise(e.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Enable</button>
+                </td>
+                <td class="px-6 py-4" *ngIf="!e.isBlocked" >
+                    <button (click)="blockEnterprise(e.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Block</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

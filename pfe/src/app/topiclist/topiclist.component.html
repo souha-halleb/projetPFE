@@ -1,0 +1,41 @@
+<div>
+      
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col"> Duration</th>
+          <th scope="col">InternName</th>
+          <th scope="col">Availability</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr    *ngFor="let n of Topics" >
+          <td  >{{n.title}}></td>
+          <td>{{n.description}}</td>
+          <td>{{n.duration}}</td>
+          <td >{{n.internName}}</td>
+          <td>{{n.isAvailable}}</td>
+            <td *ngIf="n.isAvailable==true" >
+               <select name="internID" id=""  [(ngModel)]="tId"  >
+                <option  disabled>--Choisir un intern--</option>
+                <option *ngFor="let t of Interns" [value]="t.id">{{t.name}}</option>
+               </select>
+            </td>
+            <td *ngIf="n.isAvailable==true">
+                <select name="supervisorID" [(ngModel)]="sId" >
+                    <option  disabled>--Choisir un supervisor--</option>
+                    <option *ngFor="let s of Supervisor" [value]="s.id" >{{s.name}}</option>
+                   </select>
+            </td>
+            <td>
+                <button *ngIf="n.isAvailable==true"(click)="assign(n.id)">ADD</button>
+            </td>
+        </tr>
+    
+      </tbody>
+    </table>
+</div>
